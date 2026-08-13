@@ -103,21 +103,20 @@ export default function CoursesSection({
     };
   }, [fetchData]);
 
-  // Filter courses by search query across name, description, and category
+  // Filter courses by search query across courseName and mainCategory (case-insensitive)
   const filteredCourses = useMemo(() => {
     if (!searchQuery.trim()) return courses;
     const query = searchQuery.toLowerCase().trim();
     return courses.filter(
       (course) =>
         (course.courseName || "").toLowerCase().includes(query) ||
-        (course.description || "").toLowerCase().includes(query) ||
         (course.mainCategory || "").toLowerCase().includes(query)
     );
   }, [courses, searchQuery]);
 
   // Sort courses by price based on active currency field
   const sortedCourses = useMemo(() => {
-    if (sortBy === "default") return filteredCourses;
+    if (sortBy === "default" || !countryCode) return filteredCourses;
     return [...filteredCourses].sort((a, b) => {
       const field = countryCode === "US" ? "priceUsdCents" : "pricePaise";
       const priceA = a[field] ?? 0;
