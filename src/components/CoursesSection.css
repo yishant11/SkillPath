@@ -1,0 +1,157 @@
+/* CoursesSection Component Styles */
+.courses-section {
+  padding: 80px 24px;
+  background-color: #F8FAFC;
+}
+
+.courses-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.courses-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.courses-title {
+  font-size: 32px;
+  font-weight: 700;
+  margin: 0 0 10px 0;
+  color: #0F172A;
+}
+
+.courses-subtitle {
+  font-size: 16px;
+  color: #64748B;
+  margin: 0;
+}
+
+.courses-country-notice {
+  font-size: 13px;
+  color: #94A3B8;
+  font-style: italic;
+  margin-top: 8px;
+}
+
+/* Search & Sort Controls Bar */
+.courses-controls {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 28px;
+}
+
+.courses-search-input {
+  flex: 1;
+  padding: 10px 16px;
+  font-size: 14px;
+  border: 1px solid #E2E8F0;
+  border-radius: 8px;
+  background-color: #FFFFFF;
+  color: #0F172A;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.courses-search-input:focus {
+  border-color: #6366F1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.12);
+}
+
+.courses-sort-select {
+  padding: 10px 16px;
+  font-size: 14px;
+  border: 1px solid #E2E8F0;
+  border-radius: 8px;
+  background-color: #FFFFFF;
+  color: #0F172A;
+  cursor: pointer;
+  outline: none;
+  min-width: 160px;
+}
+
+/* Responsive CSS Grid: 3 columns -> 2 columns -> 1 column */
+.courses-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  width: 100%;
+}
+
+@media (max-width: 1024px) {
+  .courses-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .courses-section {
+    padding: 56px 16px;
+  }
+  .courses-title {
+    font-size: 24px;
+  }
+  .courses-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .courses-sort-select {
+    width: 100%;
+  }
+  .courses-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Error & Empty States */
+.courses-state-box {
+  text-align: center;
+  padding: 60px 24px;
+}
+
+.courses-state-icon {
+  margin-bottom: 16px;
+}
+
+.courses-state-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #0F172A;
+  margin: 0 0 8px 0;
+}
+
+.courses-state-desc {
+  font-size: 14px;
+  color: #64748B;
+  margin: 0 0 24px 0;
+}
+
+.courses-retry-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  color: #FFFFFF;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 10px 24px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+.courses-retry-btn:hover {
+  opacity: 0.92;
+}
+
+.courses-retry-btn:active {
+  transform: scale(0.97);
+}
+
+.courses-no-results {
+  text-align: center;
+  padding: 40px 24px;
+  color: #64748B;
+  font-size: 15px;
+}

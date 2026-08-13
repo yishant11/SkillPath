@@ -1,0 +1,68 @@
+/* CourseSkeleton Component Styles */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.course-skeleton-card {
+  background-color: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  pointer-events: none;
+}
+
+.course-skeleton-bar {
+  background: linear-gradient(90deg, #E2E8F0 25%, #F1F5F9 50%, #E2E8F0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s ease-in-out infinite;
+}
+
+.course-skeleton-category {
+  width: 90px;
+  height: 24px;
+  border-radius: 100px;
+}
+
+.course-skeleton-title {
+  width: 70%;
+  height: 22px;
+  border-radius: 4px;
+}
+
+.course-skeleton-desc {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-height: 42px;
+}
+
+.course-skeleton-line-1 {
+  width: 100%;
+  height: 14px;
+  border-radius: 4px;
+}
+
+.course-skeleton-line-2 {
+  width: 80%;
+  height: 14px;
+  border-radius: 4px;
+}
+
+.course-skeleton-price {
+  margin-top: auto;
+  padding-top: 4px;
+}
+
+.course-skeleton-price-bar {
+  width: 96px;
+  height: 26px;
+  border-radius: 4px;
+}
